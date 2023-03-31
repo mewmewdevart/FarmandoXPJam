@@ -9,7 +9,9 @@ public class DefaultSnowman : MonoBehaviour
     Rigidbody2D myRigidBody2D;
     [SerializeField] float playerMoveSpeed = 3f;
     [SerializeField] float jumpSpeed = 5f;
+    [SerializeField] float timeToMelt = 10f;
     BoxCollider2D myBoxCollider2D;
+    bool isGrowing;
 
     void Awake()
     {
@@ -18,7 +20,7 @@ public class DefaultSnowman : MonoBehaviour
     }
     void Start()
     {
-
+        isGrowing = false;
     }
 
     void Update()
@@ -54,8 +56,18 @@ public class DefaultSnowman : MonoBehaviour
         if (other.tag == "SnowPiece Item")
         {
             Destroy(other.gameObject, 0f);
-            Debug.Log("Crescer");
+            isGrowing = true;
         }
+    }
+
+    public bool GetIsGrowing()
+    {
+        return isGrowing;
+    }
+
+    public void ResetIsGrowing()
+    {
+        isGrowing = false;
     }
 
     void FlipSprite()
@@ -68,5 +80,17 @@ public class DefaultSnowman : MonoBehaviour
         return Mathf.Abs(myRigidBody2D.velocity.x) > Mathf.Epsilon;
     }
 
+    public void _SetActive(bool value, Transform transform)
+    {
+        moveInputValue = Vector2.zero;
+        gameObject.transform.position = transform.position;
+        gameObject.transform.localScale = transform.localScale;
+        gameObject.SetActive(value);
+    }
+
+    public float GetTimeToMelt()
+    {
+        return timeToMelt;
+    }
 }
 
