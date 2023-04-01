@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 2553584457902974214}
   - component: {fileID: 8106048744080304674}
   - component: {fileID: 3460545245287541571}
+  - component: {fileID: 2108558017}
   m_Layer: 7
   m_Name: SmallSnowman (Player) 1
   m_TagString: Untagged
@@ -197,6 +198,28 @@ MonoBehaviour:
   playerMoveSpeed: 4
   jumpSpeed: 7
   timeToMelt: 5
+  soundManager: {fileID: 0}
+--- !u!95 &2108558017
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3894133645167977082}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: da6ba9ac82b1eb949b3ada131883b68b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &3894133646550933511
 GameObject:
   m_ObjectHideFlags: 0
@@ -248,8 +271,8 @@ MonoBehaviour:
   - {fileID: 3894133645167977082}
   - {fileID: 3894133646789159787}
   - {fileID: 3894133646555300756}
-  virtualCamera: {fileID: 3639836037027737635, guid: ae164124f0b375644946be1e5f238a26, type: 3}
-  timer: {fileID: 4987200632804118458, guid: 745961b10cd30f64daaf7024da5ee20d, type: 3}
+  virtualCamera: {fileID: 0}
+  timer: {fileID: 0}
 --- !u!1 &3894133646555300756
 GameObject:
   m_ObjectHideFlags: 0
@@ -265,6 +288,7 @@ GameObject:
   - component: {fileID: 6733235966370134910}
   - component: {fileID: 5922541702304457200}
   - component: {fileID: 5367774037557134326}
+  - component: {fileID: 1890638788}
   m_Layer: 7
   m_Name: BigSnowman (Player) 2
   m_TagString: Untagged
@@ -373,8 +397,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.019242764, y: 0.05806744}
-  m_Size: {x: 0.3688364, y: 0.8838651}
+  m_Offset: {x: -0.019242764, y: 0.037086964}
+  m_Size: {x: 0.3688364, y: 0.9258261}
   m_Direction: 0
 --- !u!114 &6733235966370134910
 MonoBehaviour:
@@ -419,7 +443,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.011820316, y: -0.35703963}
+  m_Offset: {x: -0.011820316, y: -0.39}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -445,8 +469,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerMoveSpeed: 2
-  jumpSpeed: 4
+  jumpSpeed: 5
   timeToMelt: 15
+  soundManager: {fileID: 0}
+--- !u!95 &1890638788
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3894133646555300756}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 97dd8739e9e8cf0468020d6ad7b5d683, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &3894133646789159787
 GameObject:
   m_ObjectHideFlags: 0
@@ -645,6 +691,7 @@ MonoBehaviour:
   playerMoveSpeed: 3
   jumpSpeed: 5
   timeToMelt: 11
+  soundManager: {fileID: 0}
 --- !u!95 &4034036691567499527
 Animator:
   serializedVersion: 5

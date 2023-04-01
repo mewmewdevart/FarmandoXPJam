@@ -11,12 +11,15 @@ public class DefaultSnowman : MonoBehaviour
     [SerializeField] float jumpSpeed = 5f;
     [SerializeField] float timeToMelt = 10f;
     BoxCollider2D myBoxCollider2D;
+    Animator myAnimator;
+    [SerializeField] SoundManager soundManager;
     bool isGrowing;
 
     void Awake()
     {
         myRigidBody2D = GetComponent<Rigidbody2D>();
         myBoxCollider2D = GetComponent<BoxCollider2D>();
+        myAnimator = GetComponent<Animator>();
     }
     void Start()
     {
@@ -28,7 +31,15 @@ public class DefaultSnowman : MonoBehaviour
         Walk();
         if (IsMovingHorizontal())
         {
+            if (IsFeetTouching("Ground"))
+            {
+                soundManager.PlayWalkClip();
+            }
             FlipSprite();
+        }
+        else if (IsFeetTouching("Ground") && !myAnimator.GetBool("isJumping"))
+        {
+            soundManager.StopAudio();
         }
     }
 
@@ -39,16 +50,26 @@ public class DefaultSnowman : MonoBehaviour
 
     void OnJump(InputValue value)
     {
-        if (value.isPressed && myBoxCollider2D.IsTouchingLayers(LayerMask.GetMask("Ground")))
+        if (value.isPressed && IsFeetTouching("Ground"))
         {
             myRigidBody2D.velocity += new Vector2(0f, jumpSpeed);
+            myAnimator.SetBool("isJumping", true);
+            soundManager.PlayJumpClip();
+            Invoke("ResetIsJumping", 0.3f);
         }
+    }
+
+    void ResetIsJumping()
+    {
+        myAnimator.SetBool("isJumping", false);
     }
 
     void Walk()
     {
         Vector2 playerVelocity = new Vector2(moveInputValue.x * playerMoveSpeed, myRigidBody2D.velocity.y);
         myRigidBody2D.velocity = playerVelocity;
+
+        myAnimator.SetBool("isWalking", IsMovingHorizontal());
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -78,6 +99,11 @@ public class DefaultSnowman : MonoBehaviour
     bool IsMovingHorizontal()
     {
         return Mathf.Abs(myRigidBody2D.velocity.x) > Mathf.Epsilon;
+    }
+
+    bool IsFeetTouching(params string[] layers)
+    {
+        return myBoxCollider2D.IsTouchingLayers(LayerMask.GetMask(layers));
     }
 
     public void _SetActive(bool value, Transform transform)
