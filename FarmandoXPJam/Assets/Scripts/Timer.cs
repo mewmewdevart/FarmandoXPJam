@@ -7,8 +7,10 @@ public class Timer : MonoBehaviour
     float timerMaxSeconds = 10;
     float timerValue;
     float fillAmountTime = 1;
+    bool runningTimer;
     void Start()
     {
+        runningTimer = true;
         timerValue = timerMaxSeconds;
     }
 
@@ -19,8 +21,11 @@ public class Timer : MonoBehaviour
 
     void Update()
     {
-        timerValue -= Time.deltaTime;
-        UpdateFillAmountTime();
+        if (runningTimer)
+        {
+            timerValue -= Time.deltaTime;
+            UpdateFillAmountTime();
+        }
     }
 
     void UpdateFillAmountTime()
@@ -36,5 +41,10 @@ public class Timer : MonoBehaviour
     public void RecoverFillAmountTime()
     {
         timerValue = timerMaxSeconds;
+    }
+
+    public void StopRunningTimer()
+    {
+        runningTimer = false;
     }
 }

@@ -12,9 +12,9 @@ TagManager:
   - 
   - Water
   - UI
+  - BackGround
   - Ground
   - Snowman (Player)
-  - 
   - 
   - 
   - 
@@ -45,8 +45,14 @@ TagManager:
   - name: Background
     uniqueID: 1663677315
     locked: 0
+  - name: MiddleBackground
+    uniqueID: 1403446841
+    locked: 0
   - name: Platforms
     uniqueID: 3385497675
+    locked: 0
+  - name: Objects
+    uniqueID: 368295251
     locked: 0
   - name: Items
     uniqueID: 2998668867
