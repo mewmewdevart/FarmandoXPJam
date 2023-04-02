@@ -8,6 +8,11 @@ public class SoundManager : MonoBehaviour
     [Header("Movements")]
     [SerializeField] AudioClip walkClip;
     [SerializeField] AudioClip jumpClip;
+    [Header("Items")]
+    [SerializeField] AudioClip snowPieceClip;
+    [Header("Evolutions")]
+    [SerializeField] AudioClip shrinkClip;
+    [SerializeField] AudioClip growClip;
     
 
     void Awake() 
@@ -31,6 +36,21 @@ public class SoundManager : MonoBehaviour
     public void PlayJumpClip()
     {
         PlayClip(jumpClip);
+    }
+
+    public void PlaySnowPieceClip()
+    {
+        AudioSource.PlayClipAtPoint(snowPieceClip, Camera.main.transform.position);
+    }
+
+    public void PlayGrowClip()
+    {
+        AudioSource.PlayClipAtPoint(growClip, Camera.main.transform.position);
+    }
+
+    public void PlayShrinkClip()
+    {
+        AudioSource.PlayClipAtPoint(shrinkClip, Camera.main.transform.position);
     }
     
     void PlayClip(AudioClip clip)

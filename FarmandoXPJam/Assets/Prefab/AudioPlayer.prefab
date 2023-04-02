@@ -47,6 +47,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   walkClip: {fileID: 8300000, guid: 9d05649c9f1a9524dbec90061a6a925b, type: 3}
   jumpClip: {fileID: 8300000, guid: 897eb16a1deb6404ea5d0b408505306b, type: 3}
+  snowPieceClip: {fileID: 8300000, guid: 1e0e92f1eab75014d83898386c3d5a74, type: 3}
+  shrinkClip: {fileID: 8300000, guid: b47209e743c1ac84e8dd7dde4e9c9a68, type: 3}
+  growClip: {fileID: 8300000, guid: 427f386e7200c93448a13ab0501336cd, type: 3}
 --- !u!82 &5239947945516005605
 AudioSource:
   m_ObjectHideFlags: 0

@@ -121,7 +121,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 72361b9670782b343b62e74b31cdaa6d, type: 2}
+  m_Motion: {fileID: 7400000, guid: 8d524fcca695c6d4d8af91516c1f89ff, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -224,7 +224,7 @@ AnimatorStateMachine:
   m_ChildStates:
   - serializedVersion: 1
     m_State: {fileID: 5059770405813689931}
-    m_Position: {x: 302.9411, y: 183.23532, z: 0}
+    m_Position: {x: 300, y: 180, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -1606638095756596808}
     m_Position: {x: 300, y: 290, z: 0}
@@ -250,7 +250,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: WalkingBottomMedium
-  m_Speed: 1
+  m_Speed: 0.6
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 244943343526491873}
@@ -264,7 +264,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: b1f7f4d83a4f90940b882c25f626a355, type: 2}
+  m_Motion: {fileID: 7400000, guid: d556ff520f757d844b11a4db5b0c881c, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
