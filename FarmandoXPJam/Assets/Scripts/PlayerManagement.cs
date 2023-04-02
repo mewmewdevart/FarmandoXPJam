@@ -56,6 +56,7 @@ public class PlayerManagement : MonoBehaviour
             snowmans[snowmanIndex].GetComponent<DefaultSnowman>().PlayGrowClipOnSM();
             snowmanIndex++;
             ChangePlayer();
+            snowmans[snowmanIndex].GetComponent<Animator>().SetTrigger("Grow");
         }
     }
 
@@ -73,6 +74,7 @@ public class PlayerManagement : MonoBehaviour
             snowmans[snowmanIndex].GetComponent<DefaultSnowman>().PlayShrinkClipOnSM();
             snowmanIndex--;
             ChangePlayer();
+            snowmans[snowmanIndex].GetComponent<Animator>().SetTrigger("Shrink");
         }
     }
 
