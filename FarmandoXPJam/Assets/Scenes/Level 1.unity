@@ -705,6 +705,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4125698102707845803, guid: 9290d4731c83f8a4285041ff93ab31b1, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 5239947945516005602, guid: 9290d4731c83f8a4285041ff93ab31b1, type: 3}
       propertyPath: m_Name
       value: AudioPlayer
@@ -713,6 +717,22 @@ PrefabInstance:
       propertyPath: level1ThemeClip
       value: 
       objectReference: {fileID: 8300000, guid: fb1b3cc546850604c8232823e3ced37e, type: 3}
+    - target: {fileID: 5239947945516005603, guid: 9290d4731c83f8a4285041ff93ab31b1, type: 3}
+      propertyPath: levelThemeClip.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5239947945516005603, guid: 9290d4731c83f8a4285041ff93ab31b1, type: 3}
+      propertyPath: levelThemeClip.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: fb1b3cc546850604c8232823e3ced37e, type: 3}
+    - target: {fileID: 5239947945516005603, guid: 9290d4731c83f8a4285041ff93ab31b1, type: 3}
+      propertyPath: levelThemeClip.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 9361da8a3a64b814cbad37276107c467, type: 3}
+    - target: {fileID: 5239947945516005603, guid: 9290d4731c83f8a4285041ff93ab31b1, type: 3}
+      propertyPath: levelThemeClip.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: 27e80e12e488f89429ff391ccef1e374, type: 3}
     - target: {fileID: 5239947945516005604, guid: 9290d4731c83f8a4285041ff93ab31b1, type: 3}
       propertyPath: m_RootOrder
       value: 10

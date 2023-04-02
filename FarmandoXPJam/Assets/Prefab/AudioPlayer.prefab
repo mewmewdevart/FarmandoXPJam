@@ -54,7 +54,10 @@ MonoBehaviour:
   exitDoorClip: {fileID: 8300000, guid: eae3b87463585f2459fa3cdfd6f25782, type: 3}
   shrinkClip: {fileID: 8300000, guid: b47209e743c1ac84e8dd7dde4e9c9a68, type: 3}
   growClip: {fileID: 8300000, guid: 427f386e7200c93448a13ab0501336cd, type: 3}
-  level1ThemeClip: {fileID: 8300000, guid: fb1b3cc546850604c8232823e3ced37e, type: 3}
+  levelThemeClip:
+  - {fileID: 8300000, guid: fb1b3cc546850604c8232823e3ced37e, type: 3}
+  - {fileID: 8300000, guid: 9361da8a3a64b814cbad37276107c467, type: 3}
+  - {fileID: 8300000, guid: 27e80e12e488f89429ff391ccef1e374, type: 3}
 --- !u!82 &5239947945516005605
 AudioSource:
   m_ObjectHideFlags: 0

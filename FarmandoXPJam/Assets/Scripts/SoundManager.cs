@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SoundManager : MonoBehaviour
 {
@@ -16,13 +17,13 @@ public class SoundManager : MonoBehaviour
     [SerializeField] AudioClip shrinkClip;
     [SerializeField] AudioClip growClip;
     [Header("Ost Music")]
-    [SerializeField] AudioClip level1ThemeClip;
+    [SerializeField] AudioClip[] levelThemeClip;
     
 
     void Awake() 
     {
         audioSource = GetComponent<AudioSource>();
-        backgroundMusic.clip = level1ThemeClip;
+        backgroundMusic.clip = levelThemeClip[SceneManager.GetActiveScene().buildIndex];
         backgroundMusic.Play();
     }
 
