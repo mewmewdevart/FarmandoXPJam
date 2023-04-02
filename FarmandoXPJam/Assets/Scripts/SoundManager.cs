@@ -4,20 +4,26 @@ using UnityEngine;
 
 public class SoundManager : MonoBehaviour
 {
-    AudioSource audioSource;
+    [SerializeField] AudioSource audioSource;
+    [SerializeField] AudioSource backgroundMusic;
     [Header("Movements")]
     [SerializeField] AudioClip walkClip;
     [SerializeField] AudioClip jumpClip;
     [Header("Items")]
     [SerializeField] AudioClip snowPieceClip;
+    [SerializeField] AudioClip exitDoorClip;
     [Header("Evolutions")]
     [SerializeField] AudioClip shrinkClip;
     [SerializeField] AudioClip growClip;
+    [Header("Ost Music")]
+    [SerializeField] AudioClip level1ThemeClip;
     
 
     void Awake() 
     {
         audioSource = GetComponent<AudioSource>();
+        backgroundMusic.clip = level1ThemeClip;
+        backgroundMusic.Play();
     }
 
     public void PlayWalkClip()
@@ -51,6 +57,11 @@ public class SoundManager : MonoBehaviour
     public void PlayShrinkClip()
     {
         AudioSource.PlayClipAtPoint(shrinkClip, Camera.main.transform.position);
+    }
+
+    public void PlayExitDoor()
+    {
+        AudioSource.PlayClipAtPoint(exitDoorClip, Camera.main.transform.position);
     }
     
     void PlayClip(AudioClip clip)
