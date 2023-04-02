@@ -3,7 +3,9 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - SnowPiece Item
+  - Snowmans
   layers:
   - Default
   - TransparentFX
@@ -11,9 +13,9 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
+  - BackGround
+  - Ground
+  - Snowman (Player)
   - 
   - 
   - 
@@ -40,4 +42,22 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Background
+    uniqueID: 1663677315
+    locked: 0
+  - name: MiddleBackground
+    uniqueID: 1403446841
+    locked: 0
+  - name: Platforms
+    uniqueID: 3385497675
+    locked: 0
+  - name: Objects
+    uniqueID: 368295251
+    locked: 0
+  - name: Items
+    uniqueID: 2998668867
+    locked: 0
+  - name: Snowman
+    uniqueID: 536019237
     locked: 0
