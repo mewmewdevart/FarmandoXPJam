@@ -23,7 +23,7 @@ public class SoundManager : MonoBehaviour
     void Awake() 
     {
         audioSource = GetComponent<AudioSource>();
-        backgroundMusic.clip = levelThemeClip[SceneManager.GetActiveScene().buildIndex];
+        backgroundMusic.clip = levelThemeClip[SceneManager.GetActiveScene().buildIndex - 1];
         backgroundMusic.Play();
     }
 

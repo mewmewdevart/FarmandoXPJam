@@ -6,12 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-<<<<<<< HEAD
     path: Assets/Scenes/startScreen.unity
     guid: cf0fc7e90372901c39b5fcb080008d05
   - enabled: 1
-=======
->>>>>>> Sevla
     path: Assets/Scenes/Level 1.unity
     guid: 42e9cbba8f1e68c4e830b43e269c72d7
   - enabled: 1
@@ -24,22 +21,9 @@ EditorBuildSettings:
     path: Assets/Scenes/happyEndScreen.unity
     guid: 0a7856d9ec7ed9342805dbc3fc0c6873
   - enabled: 1
-    path: Assets/Scenes/sadEndScreen.unity
-    guid: 41c0e9ee330f41d14be14f2bfe37848d
-  - enabled: 0
-    path: Assets/Scenes/Finish Game.unity
-    guid: 3d12ddf3962fa9f4a8f23bc9ccb84d0c
-<<<<<<< HEAD
-  - enabled: 0
     path: Assets/Scenes/GameOver.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
-  - enabled: 0
+    guid: 41c0e9ee330f41d14be14f2bfe37848d
+  - enabled: 1
     path: Assets/Scenes/pauseScreen.unity
     guid: f3f4a3b2afd8c5351ba5484d831da996
-=======
-  - enabled: 1
-    path: Assets/Scenes/GameOver.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
->>>>>>> Sevla
-  m_configObjects:
-    com.unity.input.settings: {fileID: 11400000, guid: ecda9e73e7e8c5648871024772fb6d90, type: 2}
+  m_configObjects: {}
