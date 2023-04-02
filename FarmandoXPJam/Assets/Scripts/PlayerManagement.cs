@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
 using UnityEngine.SceneManagement;
+using UnityEngine.InputSystem;
 
 public class PlayerManagement : MonoBehaviour
 {
@@ -10,7 +11,7 @@ public class PlayerManagement : MonoBehaviour
     [SerializeField] CinemachineVirtualCameraBase virtualCamera;
     int snowmanIndex;
     Transform oldPosition;
-
+    bool isDead;
     [SerializeField] Timer timer;
 
     void Awake()
@@ -23,19 +24,23 @@ public class PlayerManagement : MonoBehaviour
     void Start()
     {
         snowmanIndex = 1;
+        isDead = false;
     }
 
     void Update()
     {
-        DefaultSnowman defaultComponent = snowmans[snowmanIndex].GetComponent<DefaultSnowman>();
-        if (timer.GetFillAmountTime() <= 0)
+        if (!isDead)
         {
-            Shrink();
-        }
-        if (defaultComponent.GetIsGrowing())
-        {
-            defaultComponent.ResetIsGrowing();
-            Grow();
+            DefaultSnowman defaultComponent = snowmans[snowmanIndex].GetComponent<DefaultSnowman>();
+            if (timer.GetFillAmountTime() <= 0)
+            {
+                Shrink();
+            }
+            if (defaultComponent.GetIsGrowing())
+            {
+                defaultComponent.ResetIsGrowing();
+                Grow();
+            }
         }
     }
 
@@ -48,8 +53,10 @@ public class PlayerManagement : MonoBehaviour
         else
         {
             oldPosition = snowmans[snowmanIndex].transform;
+            snowmans[snowmanIndex].GetComponent<DefaultSnowman>().PlayGrowClipOnSM();
             snowmanIndex++;
             ChangePlayer();
+            snowmans[snowmanIndex].GetComponent<Animator>().SetTrigger("Grow");
         }
     }
 
@@ -57,13 +64,17 @@ public class PlayerManagement : MonoBehaviour
     {
         if (snowmanIndex == 0)
         {
-            Die();
+            isDead = true;
+            snowmans[snowmanIndex].GetComponent<Animator>().SetTrigger("isMelting");
+            Invoke("Die", 1f);
         }
         else
         {
             oldPosition = snowmans[snowmanIndex].transform;
+            snowmans[snowmanIndex].GetComponent<DefaultSnowman>().PlayShrinkClipOnSM();
             snowmanIndex--;
             ChangePlayer();
+            snowmans[snowmanIndex].GetComponent<Animator>().SetTrigger("Shrink");
         }
     }
 
@@ -81,9 +92,25 @@ public class PlayerManagement : MonoBehaviour
             defaultComponent._SetActive(i == snowmanIndex ? true : false, oldPosition);
             if (i == snowmanIndex)
             {
-                timer.SetTimerMaxSeconds(snowmans[i].GetComponent<DefaultSnowman>().GetTimeToMelt());
+                timer.SetTimerMaxSeconds(defaultComponent.GetTimeToMelt());
                 timer.RecoverFillAmountTime();
             }
+        }
+    }
+
+    void OnJump(InputValue value)
+    {
+        if (!isDead && value.isPressed)
+        {
+            snowmans[snowmanIndex].GetComponent<DefaultSnowman>().OnJumpFather(value);
+        }
+    }
+
+    void OnMove(InputValue value)
+    {
+        if (!isDead)
+        {
+            snowmans[snowmanIndex].GetComponent<DefaultSnowman>().OnMoveFather(value);
         }
     }
 }

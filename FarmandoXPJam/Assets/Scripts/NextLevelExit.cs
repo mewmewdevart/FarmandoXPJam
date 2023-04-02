@@ -8,10 +8,12 @@ public class NextLevelExit : MonoBehaviour
     Animator myAnimator;
     [SerializeField] Timer timer;
     [SerializeField] float levelLoadDelay = 1f;
+    SoundManager soundManager;
 
     void Awake() 
     {
         myAnimator = gameObject.GetComponent<Animator>();
+        soundManager = FindAnyObjectByType<SoundManager>();
     }
     void Start() 
     {
@@ -21,6 +23,7 @@ public class NextLevelExit : MonoBehaviour
     {
         myAnimator.SetTrigger("HasEscaped");
         timer.StopRunningTimer();
+        soundManager.PlayExitDoor();
         StartCoroutine(LoadNextLevel());
     }
 

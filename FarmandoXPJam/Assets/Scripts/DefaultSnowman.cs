@@ -10,6 +10,7 @@ public class DefaultSnowman : MonoBehaviour
     [SerializeField] float playerMoveSpeed = 3f;
     [SerializeField] float jumpSpeed = 5f;
     [SerializeField] float timeToMelt = 10f;
+    [SerializeField] GameObject father;
     BoxCollider2D myBoxCollider2D;
     Animator myAnimator;
     [SerializeField] SoundManager soundManager;
@@ -43,12 +44,12 @@ public class DefaultSnowman : MonoBehaviour
         }
     }
 
-    void OnMove(InputValue value)
+    public void OnMoveFather(InputValue value)
     {
         moveInputValue = value.Get<Vector2>();
     }
 
-    void OnJump(InputValue value)
+    public void OnJumpFather(InputValue value)
     {
         if (value.isPressed && IsFeetTouching("Ground"))
         {
@@ -76,6 +77,7 @@ public class DefaultSnowman : MonoBehaviour
     {
         if (other.tag == "SnowPiece Item")
         {
+            soundManager.PlaySnowPieceClip();
             Destroy(other.gameObject, 0f);
             isGrowing = true;
         }
@@ -117,6 +119,16 @@ public class DefaultSnowman : MonoBehaviour
     public float GetTimeToMelt()
     {
         return timeToMelt;
+    }
+
+    public void PlayShrinkClipOnSM()
+    {
+        soundManager.PlayShrinkClip();
+    }
+
+    public void PlayGrowClipOnSM()
+    {
+        soundManager.PlayGrowClip();
     }
 }
 
