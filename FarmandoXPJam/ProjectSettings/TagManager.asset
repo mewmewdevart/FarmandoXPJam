@@ -43,11 +43,14 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: MiddleBackground
+    uniqueID: 1403446841
+    locked: 0
   - name: Background
     uniqueID: 1663677315
     locked: 0
-  - name: MiddleBackground
-    uniqueID: 1403446841
+  - name: ThirdBackground
+    uniqueID: 3799182097
     locked: 0
   - name: Platforms
     uniqueID: 3385497675
