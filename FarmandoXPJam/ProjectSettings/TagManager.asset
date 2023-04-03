@@ -6,6 +6,7 @@ TagManager:
   tags:
   - SnowPiece Item
   - Snowmans
+  - MovingPlatform
   layers:
   - Default
   - TransparentFX
