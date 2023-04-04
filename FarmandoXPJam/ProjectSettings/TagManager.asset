@@ -5,7 +5,10 @@ TagManager:
   serializedVersion: 2
   tags:
   - SnowPiece Item
+<<<<<<< HEAD
   - Snowmans
+=======
+>>>>>>> ff4d3c0 (.)
   layers:
   - Default
   - TransparentFX
@@ -13,7 +16,10 @@ TagManager:
   - 
   - Water
   - UI
+<<<<<<< HEAD
   - BackGround
+=======
+>>>>>>> ff4d3c0 (.)
   - Ground
   - Snowman (Player)
   - 
@@ -39,6 +45,10 @@ TagManager:
   - 
   - 
   - 
+<<<<<<< HEAD
+=======
+  - 
+>>>>>>> ff4d3c0 (.)
   m_SortingLayers:
   - name: Default
     uniqueID: 0
@@ -46,6 +56,7 @@ TagManager:
   - name: Background
     uniqueID: 1663677315
     locked: 0
+<<<<<<< HEAD
   - name: MiddleBackground
     uniqueID: 1403446841
     locked: 0
@@ -55,6 +66,11 @@ TagManager:
   - name: Objects
     uniqueID: 368295251
     locked: 0
+=======
+  - name: Platforms
+    uniqueID: 3385497675
+    locked: 0
+>>>>>>> ff4d3c0 (.)
   - name: Items
     uniqueID: 2998668867
     locked: 0

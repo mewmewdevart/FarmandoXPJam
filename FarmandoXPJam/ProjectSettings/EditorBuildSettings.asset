@@ -6,6 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+<<<<<<< HEAD
     path: Assets/Scenes/startScreen.unity
     guid: cf0fc7e90372901c39b5fcb080008d05
   - enabled: 1
@@ -27,3 +28,9 @@ EditorBuildSettings:
     path: Assets/Scenes/pauseScreen.unity
     guid: f3f4a3b2afd8c5351ba5484d831da996
   m_configObjects: {}
+=======
+    path: Assets/Scenes/SampleScene.unity
+    guid: 2cda990e2423bbf4892e6590ba056729
+  m_configObjects:
+    com.unity.input.settings: {fileID: 11400000, guid: ecda9e73e7e8c5648871024772fb6d90, type: 2}
+>>>>>>> ff4d3c0 (.)
